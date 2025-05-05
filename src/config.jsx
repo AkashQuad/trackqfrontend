@@ -1,0 +1,1 @@
+export const apiUrl="https://trackq-bmd3cufqc0byhwb8.canadacentral-01.azurewebsites.net"
