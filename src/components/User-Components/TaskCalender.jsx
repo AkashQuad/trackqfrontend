@@ -159,6 +159,10 @@ const TaskCalendar = () => {
       setAllTasks(tasks);
     } catch (err) {
       console.error("TaskCalendar: Error fetching all tasks:", err);
+      if(tasks==null){
+        setError("no task found");
+      }
+        
       setError("Failed to load tasks.");
       setAllTasks([]);
     } finally {
