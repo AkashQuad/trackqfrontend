@@ -48,13 +48,14 @@ const Login = () => {
       const response = await axios.post(`${apiUrl}/api/Auth/login`, formData, {
         headers: { 'Content-Type': 'application/json' }
       });
+     console.log(response.data);
 
       if (response.data.token) {
         const token = response.data.token;
         localStorage.setItem('token', token);
         
         const decodedToken = jwtDecode(token);
-        console.log(decodedToken);
+        
         const userId = decodedToken.nameid;
         const role = decodedToken.role;
         const UserName=decodedToken.unique_name;
